@@ -1,0 +1,33 @@
+
+
+body {
+    /* background-color: #FFBE00;*/
+    display: table;
+    width: 100%;
+    height: 800px;
+    background: url(../party.svg) no-repeat bottom center scroll;
+    background-position: 30% 45%;
+    background-size: cover;
+
+}
+
+
+.texto {
+    padding-left: 40px;
+    padding-top: 80px;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+#subtext {
+    font-family: roboto, sans-serif;
+    font-size: 14pt
+}
+
+footer {
+
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
