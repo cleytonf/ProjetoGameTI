@@ -28,6 +28,21 @@ public class Pergunta {
 		this.gabarito = gabarito;
 		this.status = status;
 	}
+	
+	public Pergunta( int usuario_id, int tema_id, String descricao, String alternativa_1, String alternativa_2, String alternativa_3,
+			String alternativa_4, int gabarito, int status) {
+		super();
+		this.usuario_id = usuario_id;
+		this.tema_id = tema_id;
+		this.descricao = descricao;
+		this.alternativa_1 = alternativa_1;
+		this.alternativa_2 = alternativa_2;
+		this.alternativa_3 = alternativa_3;
+		this.alternativa_4 = alternativa_4;
+		this.gabarito = gabarito;
+		this.status = status;
+	}
+	
 	public Pergunta() {
 		super();
 	}

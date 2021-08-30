@@ -14,7 +14,12 @@
 	</head>
 	<body>
 	
-		<%@ include file="Menu.jsp" %>
+		<%@ include file="../MenuLogado.jsp" %>
+		
+		<div class="container">
+			<br>
+			<a class="btn btn-success" role="button" href="<%=request.getContextPath()%>/usuario/CadastrarUsuario.jsp">Cadastrar</a>
+			<br>		
 			
 		<table class="table">
   <thead class="thead-dark">
@@ -24,6 +29,7 @@
       <th scope="col">Email</th>
       <th scope="col">Login</th>
       <th scope="col">Ações</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -53,6 +59,9 @@
     
   </tbody>
 </table>
+
+		<%@ include file="../Rodape.jsp" %>
 		
+		</div>
 	</body>
 </html>

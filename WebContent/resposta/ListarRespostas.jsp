@@ -3,6 +3,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="br.edu.ifs.dao.*"%>
 <%@ page import="br.edu.ifs.modelo.*"%>
+<%@ page import="br.edu.ifs.util.*"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,7 +15,11 @@
 	</head>
 	<body>
 	
-		<%@ include file="../Menu.jsp" %>
+		<%@ include file="../MenuLogado.jsp" %>
+			<div class="container">
+			<br>
+			<a class="btn btn-success" role="button" href="<%=request.getContextPath()%>/resposta/CadastrarResposta.jsp">Cadastrar</a>
+			<br>		
 			
 		<table class="table">
   <thead class="thead-dark">
@@ -24,6 +29,7 @@
       <th scope="col">Pergunta_id</th>
       <th scope="col">Alternativa</th>
       <th scope="col">Data_Resposta</th>
+      <th scope="col"></th>
       
     </tr>
   </thead>
@@ -44,7 +50,7 @@
       <td><%=resposta.getUsuario_id()%></td>
       <td><%=resposta.getPergunta_id()%></td>
       <td><%=resposta.getAlternativa()%></td>
-      <td><%=resposta.getData_resposta()%></td>
+      <td><%=FormataData.toString(resposta.getData_resposta())%></td>
       <td>
       	<a class="btn btn-warning" role="button" href="<%=request.getContextPath()%>/resposta/AlterarResposta.jsp?id=<%=resposta.getId()%>">Alterar</a>
       	<a class="btn btn-danger" role="button" href="<%=request.getContextPath()%>/resposta/ExcluirResposta.jsp?id=<%=resposta.getId()%>">Excluir</a>
@@ -55,6 +61,6 @@
     
   </tbody>
 </table>
-		
+		</div>
 	</body>
 </html>

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifs.modelo.Tema;
-import br.edu.ifs.modelo.Usuario;
 
 public class TemadaoPostegres implements ITemadao {
 
@@ -33,6 +32,7 @@ private Connection conexao;
 			stmt.setString(1, tema.getNome());
 			stmt.setString(2, tema.getDescricao());
 			stmt.setInt(3, tema.getStatus());
+			stmt.execute();
 			
 			sql = "SELECT CURRVAL(pg_get_serial_sequence('tema','id')) AS id";
 			stmt = this.conexao.prepareStatement(sql);

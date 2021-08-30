@@ -12,7 +12,7 @@
 	
 	</head>
 	<body>
-		<%@ include file="Menu.jsp" %>
+		<%@ include file="../Menu.jsp" %>
 			<% 
 			int id = Integer.parseInt(request.getParameter("id").toString());
 			Usuario usuario = new Usuario();
@@ -43,6 +43,6 @@ try {
 			
 		</form>
 		
-		<%@ include file="Rodape.jsp" %>
+		<%@ include file="../Rodape.jsp" %>
 	</body>
 </html>

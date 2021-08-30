@@ -9,7 +9,14 @@ public class Tema {
 	
 	public Tema(int id, String nome, String descricao, int status) {
 		super();
-		this.id = id;
+		this.id= id;
+		this.nome = nome;
+		this.descricao = descricao;
+		this.status = status;
+	}
+	
+	public Tema( String nome, String descricao, int status) {
+		super();
 		this.nome = nome;
 		this.descricao = descricao;
 		this.status = status;

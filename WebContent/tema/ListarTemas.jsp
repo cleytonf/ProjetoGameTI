@@ -14,7 +14,12 @@
 	</head>
 	<body>
 	
-		<%@ include file="../Menu.jsp" %>
+		<%@ include file="../MenuLogado.jsp" %>
+		
+		<div class="container">
+			<br>
+			<a class="btn btn-success" role="button" href="<%=request.getContextPath()%>/tema/CadastrarTema.jsp">Cadastrar</a>
+			<br>		
 			
 		<table class="table">
   <thead class="thead-dark">
@@ -23,6 +28,7 @@
       <th scope="col">Nome</th>
       <th scope="col">Descrição</th>
       <th scope="col">Status</th>
+      <th scope="col"></th>
       
     </tr>
   </thead>
@@ -53,6 +59,6 @@
     
   </tbody>
 </table>
-		
+		</div>
 	</body>
 </html>

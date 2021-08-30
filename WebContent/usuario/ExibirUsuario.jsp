@@ -14,7 +14,7 @@
 	</head>
 	<body>
 	
-		<%@ include file="Menu.jsp" %>
+		<%@ include file="../Menu.jsp" %>
 
 		<%
 		
@@ -39,7 +39,7 @@
 		<p>Nome do Usuário: <%=usuario.getNome() %></p>
 		<p>Login do Usuário: <%=usuario.getLogin() %></p>
 
-		<%@ include file="Rodape.jsp" %>
+		<%@ include file="../Rodape.jsp" %>
 
 	</body>
 </html>

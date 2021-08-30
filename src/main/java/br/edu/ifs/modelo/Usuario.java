@@ -21,14 +21,22 @@ public class Usuario {
 	}
 	
 	//Construtor
+		public Usuario(String nome, String email, String login, String senha, int tipo) {
+			super();
+			this.nome = nome;
+			this.email = email;
+			this.login = login;
+			this.senha = senha;
+			this.tipo = tipo;
+
+	}
 		public Usuario(String nome, String email, String login, String senha) {
 			super();
 			this.nome = nome;
 			this.email = email;
 			this.login = login;
 			this.senha = senha;
-
-	}
+		}	
 		public Usuario() {
 			super();
 		}		

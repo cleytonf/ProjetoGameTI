@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.edu.ifs.modelo.Usuario;
 import br.edu.ifs.dao.FabricaConexoesPostegres;
-import br.edu.ifs.dao.FabricaConexoesPostegres;
 import br.edu.ifs.dao.IFabricaConexoes;
 import br.edu.ifs.dao.IUsuariodao;
 import br.edu.ifs.dao.UsuariodaoPostegres;

@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import br.edu.ifs.modelo.Pergunta;
@@ -22,7 +23,7 @@ private Connection conexao;
 	@Override
 	public int criar(Resposta resposta) throws SQLException {
 		
-		String sql = "INSERT INTO public.resposta(usuario_id, pergunta_id, alternativa, data_resposta) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO public.resposta(usuario_id, pergunta_id, alternativa) VALUES (?, ?, ?)";
 		
 		int id = 0;
 		
@@ -33,7 +34,9 @@ private Connection conexao;
 			stmt.setInt(1, resposta.getUsuario_id());
 			stmt.setInt(2, resposta.getPergunta_id());
 			stmt.setInt(3, resposta.getAlternativa());
-			stmt.setDate(4, resposta.getData_resposta());
+			
+			System.out.println(stmt.toString());
+			stmt.execute();
 			
 			sql = "SELECT CURRVAL(pg_get_serial_sequence('resposta','id')) AS id";
 			stmt = this.conexao.prepareStatement(sql);
@@ -129,18 +132,21 @@ private Connection conexao;
 	@Override
 	public boolean atualizar(Resposta resposta) throws SQLException {
 		
-		String sql = "UPDATE resposta SET usuario_id=?, pergunta_id=?, alternativa=?, data_resposta=? WHERE id=?";
+		String sql = "UPDATE resposta SET  pergunta_id=?, alternativa=?, data_resposta=? WHERE id=?";
 		
 		try {
 					
 					PreparedStatement stmt = conexao.prepareStatement(sql);
 						
 						
-					stmt.setInt(1, resposta.getUsuario_id());
-					stmt.setInt(2, resposta.getPergunta_id());
-					stmt.setInt(3, resposta.getAlternativa());
-					stmt.setDate(4, resposta.getData_resposta());
+					
+					stmt.setInt(1, resposta.getPergunta_id());
+					stmt.setInt(2, resposta.getAlternativa());
+					stmt.setDate(3, resposta.getData_resposta());
+					stmt.setInt(4, resposta.getId());
 						
+					System.out.println(stmt.toString());
+					
 						stmt.executeUpdate();
 						
 						return true;

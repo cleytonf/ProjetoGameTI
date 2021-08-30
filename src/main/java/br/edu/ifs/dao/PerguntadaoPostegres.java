@@ -39,6 +39,7 @@ private Connection conexao;
 			stmt.setString(7, pergunta.getAlternativa_4());
 			stmt.setInt(8, pergunta.getGabarito());
 			stmt.setInt(9, pergunta.getStatus());
+			stmt.execute();
 			
 			sql = "SELECT CURRVAL(pg_get_serial_sequence('pergunta','id')) AS id";
 			stmt = this.conexao.prepareStatement(sql);
@@ -159,7 +160,10 @@ private Connection conexao;
 					stmt.setString(7, pergunta.getAlternativa_4());
 					stmt.setInt(8, pergunta.getGabarito());
 					stmt.setInt(9, pergunta.getStatus());
+					stmt.setInt(10, pergunta.getId());
 						
+					System.out.println(stmt.toString());
+					
 						stmt.executeUpdate();
 						
 						return true;

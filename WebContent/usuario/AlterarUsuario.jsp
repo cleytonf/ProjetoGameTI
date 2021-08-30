@@ -12,7 +12,7 @@
 	
 	</head>
 	<body>
-		<%@ include file="Menu.jsp" %>
+		<%@ include file="../Menu.jsp" %>
 			<% 
 			int id = Integer.parseInt(request.getParameter("id").toString());
 			Usuario usuario = new Usuario();
@@ -34,9 +34,11 @@ try {
 			<h2>Alterar Usuário</h2>
 			
 		<form method="post" action="<%=request.getContextPath()%>/AlterarUsuario.do">
-			<label for="nome">Nome:</label>
 			<input type="hidden" name="id" values="<%=usuario.getId()%>">
+			
+			<label for="nome">Nome:</label>
 			<input type="text" id="nome" name="nome" values="<%=usuario.getNome()%>">
+			<br>
 			<br>
 			<label for="nome">Email:</label>
 			<input type="text" id="email" name="email" values="<%=usuario.getEmail()%>">
@@ -50,9 +52,10 @@ try {
 			<input type="password" id="senha" name="senha" values="<%=usuario.getSenha()%>">
 			<br>
 			<br>
+			
 			<input type="submit" value="Alterar Usuário">
 		</form>
 		
-		<%@ include file="Rodape.jsp" %>
+		<%@ include file="../Rodape.jsp" %>
 	</body>
 </html>

@@ -19,6 +19,14 @@ public class Resposta {
 		this.data_resposta = data_resposta;
 	}
 	
+	public Resposta( int usuario_id, int pergunta_id, int alternativa, Date data_resposta) {
+		super();
+		this.usuario_id = usuario_id;
+		this.pergunta_id = pergunta_id;
+		this.alternativa = alternativa;
+		this.data_resposta = data_resposta;
+	}
+	
 	public Resposta() {
 		super();
 	}

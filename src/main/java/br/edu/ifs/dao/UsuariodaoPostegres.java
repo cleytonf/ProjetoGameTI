@@ -90,7 +90,6 @@ public class UsuariodaoPostegres implements IUsuariodao {
 		}
 	}
 
-
 	@Override
 	public List<Usuario> listar() throws SQLException {
 String sql = "SELECT id, nome, email, login, senha, tipo FROM usuario  ORDER BY id";
@@ -127,7 +126,6 @@ String sql = "SELECT id, nome, email, login, senha, tipo FROM usuario  ORDER BY 
 		}
 	}
 
-
 	@Override
 	public boolean atualizar(Usuario usuario) throws SQLException {
 		
@@ -155,7 +153,6 @@ String sql = "SELECT id, nome, email, login, senha, tipo FROM usuario  ORDER BY 
 				}
 			}
 
-
 	@Override
 	public boolean excluir(Usuario usuario) throws SQLException {
 		
@@ -176,6 +173,39 @@ String sql = "SELECT id, nome, email, login, senha, tipo FROM usuario  ORDER BY 
 	finally {
 		conexao.close();
 		}
+	}
+
+	@Override
+	public Usuario autenticar(String login, String senha) throws SQLException {
+		
+		String sql = "SELECT * FROM public.usuario WHERE login = ? AND senha = MD5(?)";
+		
+		try {
+			
+			PreparedStatement stmt = conexao.prepareStatement(sql);
+			
+			stmt.setString(1, login);
+			stmt.setString(2, senha);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				Usuario usuario = new Usuario(rs.getInt("id"), rs.getString("nome"), rs.getString("email"), rs.getString("login"), rs.getString("senha"), rs.getInt("tipo"));
+				return usuario;
+			
+			}
+			else {
+				return null;
+			}
+			
+		} catch (SQLException e) {
+			throw e;
+		}
+		finally {
+			conexao.close();
+		}
+		
+		
 	}
 
 }

@@ -15,5 +15,6 @@ public interface IUsuariodao {
 	
 	//Outras Funcionalidades//
 	public List<Usuario> listar() throws SQLException;
+	public Usuario autenticar(String login, String senha) throws SQLException;
 	
 }
